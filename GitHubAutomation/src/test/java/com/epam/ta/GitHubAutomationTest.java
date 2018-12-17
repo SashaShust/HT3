@@ -52,9 +52,8 @@ public class GitHubAutomationTest {
 	}
 
 	@Test
-	public void oneCannotCreateUntitledRepository() {
+	public void oneCannotCreateUntitledRepository() throws InterruptedException {
 		steps.loginGithub(USERNAME, PASSWORD);
-		// steps.createNewUntitledRepository();
 		assertFalse(steps.createNewUntitledRepository());
 	}
 
