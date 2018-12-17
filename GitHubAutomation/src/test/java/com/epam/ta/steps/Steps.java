@@ -61,12 +61,12 @@ public class Steps {
 		return loginPage.getTextMessage().trim();
 	}
 
-	public boolean createNewUntitledRepository() {
+	public boolean createNewUntitledRepository() throws InterruptedException {
 		MainPage mainPage = new MainPage(driver);
 		mainPage.clickOnCreateNewRepositoryButton();
 		CreateNewRepositoryPage createNewRepositoryPage = new CreateNewRepositoryPage(driver);
 		createNewRepositoryPage.getinputRepositoryName().clear();
+		Thread.sleep(2000);
 		return createNewRepositoryPage.getButttonCreate().isEnabled();
 	}
-
 }
